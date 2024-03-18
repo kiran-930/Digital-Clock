@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>digital clock</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <div style="min-height: 100vh; background-color: black;" class="d-flex justify-content-center align-items-center w-100"  >
+          <h1 id="output" style="font-size: 80px;" class="text-light" >HH : MM : SS AM</h1> </div>
+
+
+    
+</body>
+<script>
+//get date and time from system
+const getdatetime= ()=>{
+    const localtime = new Date()
+    console.log(localtime);
+    const hours=localtime.getHours()
+    const minutes=localtime.getMinutes()
+    const seconds=localtime.getSeconds()
+    output.innerHTML=`${hours}: ${minutes}: ${seconds} ${hours>12?'PM':'AM'}`
+    setTimeout(()=>{
+        getdatetime()
+    },1000)
+} 
+getdatetime()
+    
+</script>
+</html>
